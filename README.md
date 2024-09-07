@@ -1,7 +1,7 @@
 ---
 title: TDP
 uuid: 46a37386-6a57-11ef-8ed7-22d98565c2c0
-version: 450
+version: 593
 created: '2024-09-03T19:47:33-05:00'
 tags:
   - tesis
@@ -9,9 +9,9 @@ tags:
 
 # Para la semana 4
 
-# Sesión 2
+# Sesión 2+
 
-## Sábado 7 de setiembre se requiere:<!-- {"collapsed":true} -->
+## Domingo 8 de setiembre se requiere:<!-- {"collapsed":true} -->
 
 ### 1. **Antecedente Internacional**<!-- {"collapsed":true} -->
 
@@ -95,19 +95,9 @@ tags:
 
 ## Pendientes
 
-### **Parte 1: Antecedente Internacional y Identificación de Brechas**
+### ~~**Parte 1: Identificación de Brechas **~~Quedan mejoras<!-- {"collapsed":true} -->
 
 Proporcionar un contexto internacional que demuestre la relevancia de tu investigación y destacar las brechas u oportunidades para justificar tu propuesta.
-
-- [ ] Seleccionar un artículo o informe internacional clave como antecedente.<!-- {"duration":"PT15M","startAt":1725424200,"uuid":"cedf6cd5-03bc-4fa8-a50d-359e95d27206"} -->
-
-    - [ ] **Revisar**: Estudios de caso sobre plataformas de e-learning en otros países.<!-- {"uuid":"8c4b18b2-c6ed-4773-82e9-03e64df8cc56"} -->
-
-    - [ ] **Buscar**: Tesis doctorales que aborden desarrollos en plataformas educativas.<!-- {"uuid":"a12172fa-d792-43f9-b9ac-79343b62f3b8"} -->
-
-    - [ ] **Documentos requeridos**: Artículos en journals Q1/Q2, tesis doctorales, informes de organizaciones internacionales<!-- {"uuid":"db707910-f580-4d66-9cd7-7356ab397d6e"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"2b2cd408-39ba-4517-a353-d60305c2aa40"} -->
 
 - [ ] Identificar de 5 a 10 tesis doctorales que mencionen brechas u oportunidades relevantes.<!-- {"duration":"PT30M","startAt":1725425100,"uuid":"e3e33165-f8be-4540-b908-02cfb1f0915b"} -->
 
@@ -131,7 +121,7 @@ Proporcionar un contexto internacional que demuestre la relevancia de tu investi
 
 - [ ] Escribir un análisis que conecte el antecedente internacional con las brechas identificadas en la literatura.<!-- {"startAt":1725428700,"uuid":"9adcd788-f942-448e-9aaf-849eaace66d5"} -->
 
-### **Parte 2: Descripción de la Problemática y Análisis Metodológico**
+### ~~**Parte 2: Descripción de la Problemática y Análisis Metodológico **~~Mejorar las referencias del problema, algunas estan agregadas pero no son suficientes<!-- {"collapsed":true} -->
 
 Evidenciar la problemática a resolver y establecer un marco metodológico sólido para el análisis de esta problemática.
 
@@ -165,37 +155,11 @@ Evidenciar la problemática a resolver y establecer un marco metodológico sóli
 
         - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"08b7f8a0-901d-4011-839c-d7fb4d4f423b"} -->
 
-- [ ] Citar 2-3 metodologías reconocidas para el análisis del árbol de problemas.<!-- {"duration":"PT20M","startAt":1725432600,"uuid":"212c8be5-7730-4d63-ac58-16a0513920dc"} -->
-
-    - [ ] **Investigar**: Metodologías comunes en el análisis de problemas educativos (ej. Marco Lógico).<!-- {"uuid":"366f958f-ed74-45c5-b2e2-0afdaa1fb687"} -->
-
-    - [ ] **Citar**: Guías o manuales que expliquen estas metodologías.<!-- {"uuid":"7001919a-a0d8-44e7-931d-0fcb632dcab3"} -->
-
-    - [ ] **Aplicar**: Estos frameworks en la construcción del árbol de problemas en tu tesis.<!-- {"uuid":"9e3f9bef-ec49-4904-8243-6d228684d1dd"} -->
-
-    - [ ] **Documentos requeridos**: 2-3 metodologías o frameworks reconocidos.<!-- {"uuid":"7b207d17-9db1-42b2-8e6f-07d814fccff3"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"17d3269e-8731-416a-8dd9-8db59b99f452"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"a67b4ae0-d412-49ae-8701-935e95e6c880"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"791dc04d-36e7-42b9-99fa-57feb8a8e72e"} -->
-
 - [ ] Redactar una sección que integre la descripción de la problemática con el análisis metodológico.<!-- {"startAt":1725436800,"uuid":"e6e6bb9a-249e-4215-a69b-ad43b62750d5"} -->
 
-### **Parte 3: Formulación del Problema y Propuesta de Solución**
+### **Parte 3: Formulación del Problema y Propuesta de Solución**<!-- {"collapsed":true} -->
 
 Desarrollar una formulación clara y precisa del problema, y fundamentar la propuesta de solución con un sólido respaldo bibliográfico.
-
-- [ ] Desarrollar una formulación precisa y bien argumentada del problema<!-- {"duration":"PT30M","uuid":"ed04fb89-67d1-446c-9b8d-ba5849da4172"} -->
-
-    - [ ] **Redactar**: Una pregunta de investigación clara que refleje el problema central.<!-- {"uuid":"ed26d85b-f8a2-479d-b605-e884094d8f88"} -->
-
-    - [ ] **Justificar**: La relevancia del problema con estudios previos y datos actuales.<!-- {"uuid":"4885892e-503f-495d-91c3-8066b678f913"} -->
-
-    - [ ] **Asegurar**: Que la formulación esté alineada con los objetivos y la hipótesis de la investigación.<!-- {"uuid":"aa5d4260-f139-4bc7-b9f1-202fd2fcea08"} -->
-
-    - [ ] **Documentos requeridos**:  ??? Buscar ejemplos para definir.<!-- {"uuid":"a51e575b-7890-4f49-9551-3bb06da4cd9b"} -->
 
 - [ ] Diferenciar tu propuesta de soluciones anteriores y fundamentarla con referencias.<!-- {"duration":"PT1H","uuid":"f84698a2-8685-431e-8ee4-f7134b9be573"} -->
 
@@ -219,11 +183,11 @@ Desarrollar una formulación clara y precisa del problema, y fundamentar la prop
 
 - [ ] Redactar y diferenciar tu propuesta de soluciones previas, incluyendo un diagrama tentativo.<!-- {"uuid":"f5dd8fad-6f6d-484a-ad4c-22d1d227a23e"} -->
 
-### **Parte 4: Marco Teórico**
+### **Parte 4: Marco Teórico**<!-- {"collapsed":true} -->
 
 Construir un marco teórico sólido que cubra todos los conceptos y teorías relevantes para la investigación, asegurando una cobertura completa con referencias de alta calidad.
 
-- [ ] 80% del marco teórico<!-- {"duration":"PT2H","uuid":"5d397bc4-56d5-4945-baf3-8cf08e8286f1"} -->
+- [ ] 100% del marco teórico<!-- {"duration":"PT2H","uuid":"5d397bc4-56d5-4945-baf3-8cf08e8286f1"} -->
 
     - [ ] **Estructurar:** El marco teórico de lo general a lo específico, asegurando una cobertura integral.<!-- {"uuid":"b882d6f3-9b88-4add-be6b-edf7c693773d"} -->
 
@@ -231,7 +195,7 @@ Construir un marco teórico sólido que cubra todos los conceptos y teorías rel
 
     - [ ] **Revisar:** La coherencia y relevancia de las fuentes seleccionadas.<!-- {"uuid":"c6b19c42-4d69-4237-8a43-7ecca902f4a5"} -->
 
-    - [ ] **Documentos requeridos:** Recopilar 15-20 referencias de alta calidad (Q1/Q2, tesis doctorales).<!-- {"uuid":"81c56a8c-9851-4590-b1ed-89b77229a3d9"} -->
+    - [ ] **Documentos requeridos:** Recopilar 30-40 referencias de alta calidad (Q1/Q2, tesis doctorales).<!-- {"uuid":"81c56a8c-9851-4590-b1ed-89b77229a3d9"} -->
 
         - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"0cbd1362-edcc-284f-31bb-b2923f3822a1"} -->
 
@@ -243,63 +207,21 @@ Construir un marco teórico sólido que cubra todos los conceptos y teorías rel
 
         - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"8d6df969-4d5e-cb46-71ad-795a8696b71e"} -->
 
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"e4f5eaa0-799d-4195-beea-30d5ce79098a"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"f0a94ad1-e0d6-420d-8769-20b46eb0ed6e"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"ab3b4142-d4d0-4154-9d32-b8b7bc28453e"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"0dfbed4d-5909-496b-a053-61c4d983e674"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"cca8a7cf-c49e-4fef-bf1b-b105d00e07d6"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"bf0b22ae-e20e-4464-95a0-9351eb75761e"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"186787f8-3459-4d5f-9602-aa8deae333a8"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"c3849762-f76e-4da8-9ad6-f5557e84fc5e"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"cc3e4d18-662b-488f-86f0-d90765f22506"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"5f6fc8e1-7cc6-4b61-902e-3076116d7bc9"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"ca5f6fc8-e17c-c64b-6190-2e3076116d7b"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"570473ae-66c4-2340-a1b8-3ce68155a4c5"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"8b33095f-1018-304d-b98a-dec895c7f17b"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"028b4d7f-8698-9844-8ea7-458ce7ff1cf7"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"c5f27c1a-78f9-364a-6f9b-ee78850ce29b"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"df6991d4-68d8-0f46-78ab-6318139f77ce"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"0473ae66-c423-40a1-b83c-e68155a4c556"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"33095f10-1830-4db9-8ade-c895c7f17b8a"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"8b4d7f86-9898-448e-a745-8ce7ff1cf701"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"f27c1a78-f936-4a6f-9bee-78850ce29bc4"} -->
-
-        - [ ] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"6991d468-d80f-4678-ab63-18139f77cede"} -->
-
-    - [ ] Redactar una sección del marco teórico que cubra los conceptos generales.<!-- {"uuid":"4cb80719-39fe-4a71-af83-de634e7ce62a"} -->
-
     - [ ] Avanzar hacia conceptos más específicos, asegurando una cobertura completa.<!-- {"uuid":"306f930f-ebce-4a47-a0dc-a56b53e7acbe"} -->
 
     - [ ] Revisar la coherencia y relación entre las distintas teorías y modelos incluidos<!-- {"uuid":"6a6a4252-16c4-43e2-ada6-e846b1622b59"} -->
 
+    - [ ] Al menos 5 leyes, frameworks, etc<!-- {"uuid":"f7355d41-813b-48a4-be2f-ec131b49ccdf"} -->
+
+    - [ ] No llegar a 4 puntos: 1.1.1.1<!-- {"uuid":"fe1c5b63-26fb-4b40-918c-ada8f20acf1f"} -->
+
+    - [ ] Eliminar archivos que no correspondan a la semana<!-- {"uuid":"0d7ce314-ead2-4b85-a72f-45162ba77f07"} -->
+
 ---
 
-### **Parte 5: Diseño de solucion(Arquitectura lógica y física), leyes, normatias y frameworks; MENDELEY**
+### **Parte 5: Leyes, normativas y frameworks; MENDELEY**<!-- {"collapsed":true} -->
 
 Construir un marco teórico sólido que cubra todos los conceptos y teorías relevantes para la investigación, asegurando una cobertura completa con referencias de alta calidad.
-
-- [ ] Diseño de solucion<!-- {"duration":"PT2H","uuid":"f25d397b-c456-d549-45ba-f38cf08e8286"} -->
-
-    - [ ] Revisar la coherencia y relación entre las distintas teorías y modelos incluidos<!-- {"uuid":"5a6a6a42-5216-c443-e2ad-a6e846b1622b"} -->
 
 - [ ] Complemento marco teorico<!-- {"duration":"PT2H","uuid":"87f25d39-7bc4-56d5-4945-baf38cf08e82"} -->
 
@@ -311,10 +233,48 @@ Construir un marco teórico sólido que cubra todos los conceptos y teorías rel
 
 ---
 
-\
-
-- Agregar diseño de solucion yy mas marco terociao, leyes y nroamtivas mejor estrujcturadas; capitulo 1 100% igual que arquitecturas
-
 # Completed tasks<!-- {"omit":true} -->
 
-- [x] Artículos Q1/Q2, tesis doctorales, informes de organizaciones internacionales.<!-- {"indent":1,"uuid":"91462107-58c2-4123-abac-c77c7712872f"} -->
+- [x] Revisar la coherencia y relación entre las distintas teorías y modelos incluidos<!-- {"indent":1,"uuid":"5a6a6a42-5216-c443-e2ad-a6e846b1622b"} -->
+
+- [x] Diseño de solucion<!-- {"duration":"PT2H","uuid":"f25d397b-c456-d549-45ba-f38cf08e8286"} -->
+
+    - [x] Redactar una sección del marco teórico que cubra los conceptos generales.<!-- {"uuid":"4cb80719-39fe-4a71-af83-de634e7ce62a"} -->
+
+    - [x] **Documentos requeridos**:  ??? Buscar ejemplos para definir.<!-- {"uuid":"a51e575b-7890-4f49-9551-3bb06da4cd9b"} -->
+
+    - [x] **Asegurar**: Que la formulación esté alineada con los objetivos y la hipótesis de la investigación.<!-- {"uuid":"aa5d4260-f139-4bc7-b9f1-202fd2fcea08"} -->
+
+    - [x] **Justificar**: La relevancia del problema con estudios previos y datos actuales.<!-- {"uuid":"4885892e-503f-495d-91c3-8066b678f913"} -->
+
+    - [x] **Redactar**: Una pregunta de investigación clara que refleje el problema central.<!-- {"uuid":"ed26d85b-f8a2-479d-b605-e884094d8f88"} -->
+
+- [x] Desarrollar una formulación precisa y bien argumentada del problema<!-- {"duration":"PT30M","uuid":"ed04fb89-67d1-446c-9b8d-ba5849da4172"} -->
+
+    - [x] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"indent":2,"uuid":"791dc04d-36e7-42b9-99fa-57feb8a8e72e"} -->
+
+        - [x] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"a67b4ae0-d412-49ae-8701-935e95e6c880"} -->
+
+        - [x] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"uuid":"17d3269e-8731-416a-8dd9-8db59b99f452"} -->
+
+    - [x] **Documentos requeridos**: 2-3 metodologías o frameworks reconocidos.<!-- {"uuid":"7b207d17-9db1-42b2-8e6f-07d814fccff3"} -->
+
+    - [x] **Aplicar**: Estos frameworks en la construcción del árbol de problemas en tu tesis.<!-- {"uuid":"9e3f9bef-ec49-4904-8243-6d228684d1dd"} -->
+
+    - [x] **Citar**: Guías o manuales que expliquen estas metodologías.<!-- {"uuid":"7001919a-a0d8-44e7-931d-0fcb632dcab3"} -->
+
+    - [x] **Investigar**: Metodologías comunes en el análisis de problemas educativos (ej. Marco Lógico).<!-- {"uuid":"366f958f-ed74-45c5-b2e2-0afdaa1fb687"} -->
+
+- [x] Citar 2-3 metodologías reconocidas para el análisis del árbol de problemas.<!-- {"duration":"PT20M","startAt":1725432600,"uuid":"212c8be5-7730-4d63-ac58-16a0513920dc"} -->
+
+    - [x] Artículo x \|\| Título \|\| Autores \|\| Link<!-- {"indent":2,"uuid":"2b2cd408-39ba-4517-a353-d60305c2aa40"} -->
+
+    - [x] **Documentos requeridos**: Artículos en journals Q1/Q2, tesis doctorales, informes de organizaciones internacionales<!-- {"uuid":"db707910-f580-4d66-9cd7-7356ab397d6e"} -->
+
+    - [x] **Buscar**: Tesis doctorales que aborden desarrollos en plataformas educativas.<!-- {"uuid":"a12172fa-d792-43f9-b9ac-79343b62f3b8"} -->
+
+    - [x] **Revisar**: Estudios de caso sobre plataformas de e-learning en otros países.<!-- {"uuid":"8c4b18b2-c6ed-4773-82e9-03e64df8cc56"} -->
+
+- [x] Seleccionar un artículo o informe internacional clave como antecedente.<!-- {"duration":"PT15M","startAt":1725424200,"uuid":"cedf6cd5-03bc-4fa8-a50d-359e95d27206"} -->
+
+    - [x] Artículos Q1/Q2, tesis doctorales, informes de organizaciones internacionales.<!-- {"uuid":"91462107-58c2-4123-abac-c77c7712872f"} -->
