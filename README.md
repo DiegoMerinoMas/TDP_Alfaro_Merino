@@ -1,7 +1,7 @@
 ---
 title: TDP
 uuid: 46a37386-6a57-11ef-8ed7-22d98565c2c0
-version: 593
+version: 608
 created: '2024-09-03T19:47:33-05:00'
 tags:
   - tesis
@@ -11,87 +11,7 @@ tags:
 
 # Sesión 2+
 
-## Domingo 8 de setiembre se requiere:<!-- {"collapsed":true} -->
-
-### 1. **Antecedente Internacional**<!-- {"collapsed":true} -->
-
-- **Objetivo**: Identificar estudios, proyectos, o desarrollos previos a nivel internacional que aborden la enseñanza de matemáticas a través de plataformas de e-learning con inteligencia artificial o gamificación.
-
-- **Documentos requeridos**:
-
-    - Artículos en journals Q1/Q2 que presenten estudios de caso o revisiones de plataformas similares en otros países.
-
-    - Tesis doctorales de universidades reconocidas que aborden el desarrollo de plataformas educativas.
-
-    - Informes de organizaciones internacionales como la UNESCO, la OCDE, o el Banco Mundial sobre educación digital.
-
-### 2. **Identificación de Brechas u Oportunidades Específicas**<!-- {"collapsed":true} -->
-
-- **Objetivo**: Definir claramente las brechas en la investigación existente y las oportunidades para innovar en tu propuesta.
-
-- **Documentos requeridos**:
-
-    - **5-10 referencias de tesis doctorales** centradas en e-learning, personalización del aprendizaje, o plataformas educativas con uso de IA.
-
-    - Artículos Q1/Q2 que analicen los desafíos y limitaciones en la implementación de plataformas similares, destacando áreas que aún no han sido abordadas.
-
-    - Revisiones sistemáticas que expongan las limitaciones en la literatura actual.
-
-### 3. **Descripción de la Problemática**<!-- {"collapsed":true} -->
-
-- **Objetivo**: Evidenciar con datos y estudios previos la magnitud del problema a resolver.
-
-- **Documentos requeridos**:
-
-    - **10 referencias de artículos Q1/Q2** que analicen el bajo rendimiento en matemáticas en América Latina y en particular en Perú.
-
-    - **Reportes técnicos** del Ministerio de Educación del Perú, INEI, o evaluaciones como PISA que reflejen la problemática.
-
-    - Estudios que relacionen la calidad educativa con el acceso a tecnologías y métodos pedagógicos modernos.
-
-### 4. **Árbol de Problemas**
-
-- **Objetivo**: Representar gráficamente las causas y consecuencias del problema central.
-
-- **Documentos requeridos**:
-
-    - **2-3 metodologías o frameworks reconocidos** para el análisis de problemas, como el marco lógico, árbol de problemas, o la metodología del diseño centrado en el usuario.
-
-    - Guías o manuales de instituciones académicas o de desarrollo (por ejemplo, Banco Mundial o UNESCO) que expliquen la implementación de estas herramientas en proyectos educativos.
-
-### 5. **Formulación del Problema**<!-- {"collapsed":true} -->
-
-- **Objetivo**: Plantear claramente la pregunta de investigación y su desarrollo.
-
-- **Documentos requeridos**:
-
-    - Revisar artículos Q1/Q2 que aborden problemas similares en otros contextos y ver cómo han formulado sus preguntas de investigación.
-
-    - Estudios previos que expongan claramente cómo la correcta formulación del problema orienta a soluciones efectivas.
-
-### 6. **Propuesta de Solución**<!-- {"collapsed":true} -->
-
-- **Objetivo**: Plantear una solución innovadora que aporte valor y se diferencie de los antecedentes.
-
-- **Documentos requeridos**:
-
-    - **5-10 trabajos Q1/Q2** que utilicen enfoques similares o complementarios (por ejemplo, plataformas con inteligencia artificial, gamificación, o e-learning personalizable).
-
-    - Estudios de casos exitosos de implementación de tecnologías similares en otros contextos educativos.
-
-    - **Diagrama de la propuesta de solución o modelo tentativo** que ilustre la arquitectura del sistema, flujos de datos, o interacciones clave en la plataforma.
-
-### 7. **Marco Teórico**<!-- {"collapsed":true} -->
-
-- **Objetivo**: Establecer un fundamento teórico sólido que respalde toda la investigación.
-
-- **Documentos requeridos**:
-
-    - **15-20 referencias de papers Q1, Q2** que cubran desde conceptos generales (como e-learning, IA en educación) hasta los más específicos (como gamificación, personalización del aprendizaje).
-
-    - Tesis doctorales de universidades reconocidas que exploren temas relevantes para tu investigación.
-
-    - Libros o capítulos de libros académicos que ofrezcan revisiones teóricas exhaustivas de los temas clave.
+## Domingo 8 de setiembre se requiere:
 
 ## Pendientes
 
