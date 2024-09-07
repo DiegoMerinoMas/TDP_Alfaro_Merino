@@ -15,7 +15,7 @@ tags:
 
 ## Pendientes
 
-### ~~**Parte 1: Identificación de Brechas **~~Quedan mejoras<!-- {"collapsed":true} -->
+### ~~**Parte 1: Identificación de Brechas**~~ Quedan mejoras<!-- {"collapsed":true} -->
 
 Proporcionar un contexto internacional que demuestre la relevancia de tu investigación y destacar las brechas u oportunidades para justificar tu propuesta.
 
@@ -41,7 +41,7 @@ Proporcionar un contexto internacional que demuestre la relevancia de tu investi
 
 - [ ] Escribir un análisis que conecte el antecedente internacional con las brechas identificadas en la literatura.<!-- {"startAt":1725428700,"uuid":"9adcd788-f942-448e-9aaf-849eaace66d5"} -->
 
-### ~~**Parte 2: Descripción de la Problemática y Análisis Metodológico **~~Mejorar las referencias del problema, algunas estan agregadas pero no son suficientes<!-- {"collapsed":true} -->
+### ~~**Parte 2: Descripción de la Problemática y Análisis Metodológico**~~ Mejorar las referencias del problema, algunas estan agregadas pero no son suficientes<!-- {"collapsed":true} -->
 
 Evidenciar la problemática a resolver y establecer un marco metodológico sólido para el análisis de esta problemática.
 
