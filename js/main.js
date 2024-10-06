@@ -1,19 +1,22 @@
 import { renderEditView } from "../views/editView.js";
 import { renderRenderedView } from "../views/renderedView.js";
 import { updatePreview } from "./preview.js";
-import { initGitHubAuth, saveToGitHub } from "./github-api.js";
+import {
+  initGitHubAuth,
+  handleAuthCallback,
+  saveToGitHub,
+} from "./github-api.js";
 import { loadContent } from "./content-loader.js";
 
 const contentArea = document.getElementById("content-area");
 let currentCourse = "taller";
+let isAuthenticated = false;
 
 async function switchToEditView() {
   contentArea.innerHTML = "";
-  console.log("Cambiando a vista de edición para el curso:", currentCourse);
 
   try {
     const content = await loadContent(currentCourse);
-    console.log("Contenido cargado para edición:", content);
 
     if (content === null) {
       throw new Error("No se pudo cargar el contenido");
@@ -37,11 +40,9 @@ async function switchToEditView() {
 
 async function switchToRenderedView() {
   contentArea.innerHTML = "";
-  console.log("Cambiando a vista renderizada para el curso:", currentCourse);
 
   try {
     const content = await loadContent(currentCourse);
-    console.log("Contenido cargado para renderizar:", content);
 
     if (content === null) {
       throw new Error("No se pudo cargar el contenido");
@@ -75,11 +76,22 @@ async function switchCourse(course) {
 document.addEventListener("DOMContentLoaded", async () => {
   const savedCourse = localStorage.getItem("currentCourse") || "taller";
   await switchCourse(savedCourse);
-  const isAuthorized = initGitHubAuth();
-  if (isAuthorized) {
-    document.getElementById("saveButton").disabled = false;
+
+  const authCode = localStorage.getItem("github_auth_code");
+  if (authCode) {
+    localStorage.removeItem("github_auth_code");
+    isAuthenticated = await handleAuthCallback(authCode);
+    updateAuthUI();
   }
 });
+
+function updateAuthUI() {
+  const saveButton = document.getElementById("saveButton");
+  saveButton.textContent = isAuthenticated
+    ? "Guardar"
+    : "Guardar (requiere autenticación)";
+  saveButton.disabled = false;
+}
 
 document
   .getElementById("editButton")
@@ -91,6 +103,24 @@ document.getElementById("saveButton").addEventListener("click", async () => {
   const editor = document.getElementById("editor");
   if (editor) {
     await saveToGitHub(editor.value, currentCourse);
+  } else {
+    alert("No hay contenido para guardar.");
+  }
+});
+
+document.getElementById("saveButton").addEventListener("click", async () => {
+  if (!isAuthenticated) {
+    // Iniciar el proceso de autenticación
+    initGitHubAuth();
+    return;
+  }
+
+  const editor = document.getElementById("editor");
+  if (editor) {
+    const success = await saveToGitHub(editor.value, currentCourse);
+    if (success) {
+      alert("Contenido guardado exitosamente.");
+    }
   } else {
     alert("No hay contenido para guardar.");
   }

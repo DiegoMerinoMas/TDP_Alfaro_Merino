@@ -1,8 +1,6 @@
 import { updatePreview } from "../js/preview.js";
 
 export function renderEditView(content) {
-  console.log("Renderizando vista de edición con contenido:", content);
-
   const container = document.createElement("div");
   container.className = "edit-view";
 
@@ -16,7 +14,6 @@ export function renderEditView(content) {
   const editor = document.createElement("textarea");
   editor.id = "editor";
   editor.value = content || "";
-  console.log("Contenido establecido en el editor:", editor.value);
 
   editorContainer.appendChild(editorTitle);
   editorContainer.appendChild(editor);
