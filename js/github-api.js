@@ -1,29 +1,35 @@
 const CLIENT_ID = "Ov23liiB7IPy9NBPuIjt";
-const REDIRECT_URI = "https://tu-github-pages-url.com";
+const REDIRECT_URI =
+  "https://diegomerinomas.github.io/thesis_tracker_Alfaro_Merino/";
 const REPO_OWNER = "DiegoMerinoMas";
 const REPO_NAME = "thesis_tracker_Alfaro_Merino";
 
 let accessToken = null;
 
 export function initGitHubAuth() {
-  const authUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=repo`;
+  // Solicitamos permisos para repositorios privados
+  const scopes = "repo";
+  const authUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
+    REDIRECT_URI
+  )}&scope=${scopes}`;
   window.location.href = authUrl;
 }
 
-export async function handleAuthCallback() {
-  const code = new URLSearchParams(window.location.search).get("code");
+export async function handleAuthCallback(code) {
   if (code) {
     try {
-      // Nota: Este paso normalmente requiere un backend por seguridad
-      // Aquí simulamos la obtención del token
+      // Aquí normalmente intercambiarías el código por un token de acceso
+      // Como no tenemos un backend, simularemos este paso
       accessToken = "simulated_access_token";
 
-      const isCollaborator = await checkCollaboratorStatus();
-      if (isCollaborator) {
-        alert("Autenticación exitosa. Usuario autorizado.");
+      const hasAccess = await checkRepositoryAccess();
+      if (hasAccess) {
+        console.log(
+          "Autenticación exitosa. Usuario tiene acceso al repositorio."
+        );
         return true;
       } else {
-        alert("Usuario no es colaborador del repositorio.");
+        console.log("Usuario no tiene acceso al repositorio.");
         accessToken = null;
         return false;
       }
@@ -35,40 +41,26 @@ export async function handleAuthCallback() {
   return false;
 }
 
-async function checkCollaboratorStatus() {
-  const response = await fetch(
-    `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/collaborators`,
-    {
-      headers: {
-        Authorization: `token ${accessToken}`,
-      },
-    }
-  );
-  if (!response.ok) {
-    throw new Error("Failed to check collaborator status");
+async function checkRepositoryAccess() {
+  try {
+    const response = await fetch(
+      `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`,
+      {
+        headers: {
+          Authorization: `token ${accessToken}`,
+        },
+      }
+    );
+    return response.ok;
+  } catch (error) {
+    console.error("Error al verificar acceso al repositorio:", error);
+    return false;
   }
-  const collaborators = await response.json();
-  const user = await getAuthenticatedUser();
-  return collaborators.some(
-    (collaborator) => collaborator.login === user.login
-  );
-}
-
-async function getAuthenticatedUser() {
-  const response = await fetch("https://api.github.com/user", {
-    headers: {
-      Authorization: `token ${accessToken}`,
-    },
-  });
-  if (!response.ok) {
-    throw new Error("Failed to get user info");
-  }
-  return response.json();
 }
 
 export async function saveToGitHub(content, course) {
   if (!accessToken) {
-    alert("Por favor, autentícate primero.");
+    console.log("No hay token de acceso. Se requiere autenticación.");
     return false;
   }
 
@@ -76,11 +68,9 @@ export async function saveToGitHub(content, course) {
   const path = `content/${fileName}`;
 
   try {
-    // Obtener el SHA del archivo existente
     const currentFile = await getFileContent(path);
     const sha = currentFile ? currentFile.sha : null;
 
-    // Crear o actualizar el archivo
     const response = await fetch(
       `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`,
       {
@@ -91,8 +81,8 @@ export async function saveToGitHub(content, course) {
         },
         body: JSON.stringify({
           message: `Update ${fileName}`,
-          content: btoa(content), // Codifica el contenido en base64
-          sha: sha, // Necesario para actualizar un archivo existente
+          content: btoa(content),
+          sha: sha,
         }),
       }
     );
@@ -101,11 +91,10 @@ export async function saveToGitHub(content, course) {
       throw new Error("Failed to save file");
     }
 
-    alert("Contenido guardado exitosamente en GitHub.");
+    console.log("Contenido guardado exitosamente en GitHub.");
     return true;
   } catch (error) {
     console.error("Error al guardar en GitHub:", error);
-    alert("Error al guardar el contenido. Por favor, intenta de nuevo.");
     return false;
   }
 }
