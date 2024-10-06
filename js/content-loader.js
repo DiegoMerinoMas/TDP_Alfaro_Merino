@@ -3,14 +3,18 @@ export async function loadContent(course) {
   // Usamos una ruta relativa al root del sitio
   const path = `/content/${fileName}`;
 
+  console.log(`Intentando cargar el archivo: ${path}`);
+
   try {
     const response = await fetch(path);
+    console.log("Respuesta del fetch:", response);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const text = await response.text();
+    console.log("Contenido cargado:", text.substring(0, 100) + "...");
 
     if (text.trim().length === 0) {
       console.warn("El archivo está vacío");
@@ -27,10 +31,15 @@ export async function loadContent(course) {
       window.location.hostname === "127.0.0.1"
     ) {
       const localPath = `../content/${fileName}`;
+      console.log(`Intentando cargar desde ruta local: ${localPath}`);
       try {
         const localResponse = await fetch(localPath);
         if (localResponse.ok) {
           const localText = await localResponse.text();
+          console.log(
+            "Contenido local cargado:",
+            localText.substring(0, 100) + "..."
+          );
           return localText;
         }
       } catch (localError) {
