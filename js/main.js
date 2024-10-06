@@ -1,104 +1,106 @@
-import {
-  initGitHubAuth,
-  handleAuthCallback,
-  isAuthenticated,
-} from "./github-api.js";
 import { renderEditView } from "../views/editView.js";
 import { renderRenderedView } from "../views/renderedView.js";
+import { updatePreview } from "./preview.js";
+import { initGitHubAuth, saveToGitHub } from "./github-api.js";
 import { loadContent } from "./content-loader.js";
 
-const loginContainer = document.getElementById("login-container");
-const contentContainer = document.getElementById("content-container");
-const loginButton = document.getElementById("login-button");
-
+const contentArea = document.getElementById("content-area");
 let currentCourse = "taller";
 
-async function init() {
-  if (await handleAuthCallback()) {
-    showContent();
-  } else {
-    showLogin();
-  }
-}
-
-function showLogin() {
-  loginContainer.style.display = "block";
-  contentContainer.style.display = "none";
-}
-
-function showContent() {
-  loginContainer.style.display = "none";
-  contentContainer.style.display = "block";
-  renderApp();
-}
-
-function renderApp() {
-  contentContainer.innerHTML = `
-        <nav>
-            <button id="taller-btn">Taller de Desempeño Prof.</button>
-            <button id="seminario-btn">Seminario de Inv. Académica II</button>
-        </nav>
-        <div id="view-buttons">
-            <button id="view-btn">Ver</button>
-            <button id="edit-btn">Editar</button>
-        </div>
-        <div id="content-area"></div>
-    `;
-
-  attachEventListeners();
-  switchCourse(currentCourse);
-}
-
-function attachEventListeners() {
-  document
-    .getElementById("taller-btn")
-    .addEventListener("click", () => switchCourse("taller"));
-  document
-    .getElementById("seminario-btn")
-    .addEventListener("click", () => switchCourse("seminario"));
-  document
-    .getElementById("view-btn")
-    .addEventListener("click", () => switchToRenderedView());
-  document
-    .getElementById("edit-btn")
-    .addEventListener("click", () => switchToEditView());
-}
-
-async function switchCourse(course) {
-  currentCourse = course;
-  await switchToRenderedView();
-}
-
-async function switchToRenderedView() {
-  const contentArea = document.getElementById("content-area");
-  contentArea.innerHTML = "<p>Cargando contenido...</p>";
+async function switchToEditView() {
+  contentArea.innerHTML = "";
+  console.log("Cambiando a vista de edición para el curso:", currentCourse);
 
   try {
     const content = await loadContent(currentCourse);
-    if (content) {
-      contentArea.innerHTML = "";
-      contentArea.appendChild(renderRenderedView(content));
-    } else {
-      contentArea.innerHTML = "<p>No se pudo cargar el contenido.</p>";
+    console.log("Contenido cargado para edición:", content);
+
+    if (content === null) {
+      throw new Error("No se pudo cargar el contenido");
     }
+
+    contentArea.appendChild(renderEditView(content));
+    updateButtonStates("edit");
+
+    // Asegurarse de que la vista previa se actualice después de renderizar
+    setTimeout(() => {
+      const editor = document.getElementById("editor");
+      if (editor) {
+        updatePreview(editor.value);
+      }
+    }, 0);
   } catch (error) {
+    console.error("Error al cambiar a vista de edición:", error);
     contentArea.innerHTML = `<p>Error al cargar el contenido: ${error.message}</p>`;
   }
 }
 
-async function switchToEditView() {
-  const contentArea = document.getElementById("content-area");
-  contentArea.innerHTML = "<p>Cargando editor...</p>";
+async function switchToRenderedView() {
+  contentArea.innerHTML = "";
+  console.log("Cambiando a vista renderizada para el curso:", currentCourse);
 
   try {
     const content = await loadContent(currentCourse);
-    contentArea.innerHTML = "";
-    contentArea.appendChild(renderEditView(content));
+    console.log("Contenido cargado para renderizar:", content);
+
+    if (content === null) {
+      throw new Error("No se pudo cargar el contenido");
+    }
+
+    contentArea.appendChild(renderRenderedView(content));
+    updateButtonStates("view");
   } catch (error) {
-    contentArea.innerHTML = `<p>Error al cargar el editor: ${error.message}</p>`;
+    console.error("Error al cambiar a vista renderizada:", error);
+    contentArea.innerHTML = `<p>Error al cargar el contenido: ${error.message}</p>`;
   }
 }
 
-loginButton.addEventListener("click", initGitHubAuth);
+function updateButtonStates(activeView) {
+  document.querySelectorAll("#sidebar button").forEach((btn) => {
+    btn.classList.remove("active");
+  });
+  document.getElementById(`${activeView}Button`).classList.add("active");
+}
 
-document.addEventListener("DOMContentLoaded", init);
+async function switchCourse(course) {
+  currentCourse = course;
+  localStorage.setItem("currentCourse", course);
+  document.querySelectorAll("#course-selector button").forEach((btn) => {
+    btn.classList.remove("active");
+  });
+  document.getElementById(`${course}-btn`).classList.add("active");
+  await switchToRenderedView();
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const savedCourse = localStorage.getItem("currentCourse") || "taller";
+  await switchCourse(savedCourse);
+  const isAuthorized = initGitHubAuth();
+  if (isAuthorized) {
+    document.getElementById("saveButton").disabled = false;
+  }
+});
+
+document
+  .getElementById("editButton")
+  .addEventListener("click", switchToEditView);
+document
+  .getElementById("viewButton")
+  .addEventListener("click", switchToRenderedView);
+document.getElementById("saveButton").addEventListener("click", async () => {
+  const editor = document.getElementById("editor");
+  if (editor) {
+    await saveToGitHub(editor.value, currentCourse);
+  } else {
+    alert("No hay contenido para guardar.");
+  }
+});
+
+document
+  .getElementById("taller-btn")
+  .addEventListener("click", () => switchCourse("taller"));
+document
+  .getElementById("seminario-btn")
+  .addEventListener("click", () => switchCourse("seminario"));
+
+export { switchToEditView, switchToRenderedView, currentCourse };

@@ -6,10 +6,7 @@ const REPO_NAME = "thesis_tracker_Alfaro_Merino";
 let accessToken = null;
 
 export function initGitHubAuth() {
-  const scopes = "repo";
-  const authUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(
-    REDIRECT_URI
-  )}&scope=${scopes}`;
+  const authUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=repo`;
   window.location.href = authUrl;
 }
 
@@ -17,18 +14,16 @@ export async function handleAuthCallback() {
   const code = new URLSearchParams(window.location.search).get("code");
   if (code) {
     try {
-      // Aquí normalmente intercambiarías el código por un token de acceso
-      // Como no tenemos un backend, simularemos este paso
+      // Nota: Este paso normalmente requiere un backend por seguridad
+      // Aquí simulamos la obtención del token
       accessToken = "simulated_access_token";
 
-      const hasAccess = await checkRepositoryAccess();
-      if (hasAccess) {
-        console.log(
-          "Autenticación exitosa. Usuario tiene acceso al repositorio."
-        );
+      const isCollaborator = await checkCollaboratorStatus();
+      if (isCollaborator) {
+        alert("Autenticación exitosa. Usuario autorizado.");
         return true;
       } else {
-        console.log("Usuario no tiene acceso al repositorio.");
+        alert("Usuario no es colaborador del repositorio.");
         accessToken = null;
         return false;
       }
@@ -40,43 +35,52 @@ export async function handleAuthCallback() {
   return false;
 }
 
-async function checkRepositoryAccess() {
-  try {
-    const response = await fetch(
-      `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`,
-      {
-        headers: {
-          Authorization: `token ${accessToken}`,
-        },
-      }
-    );
-    return response.ok;
-  } catch (error) {
-    console.error("Error al verificar acceso al repositorio:", error);
-    return false;
+async function checkCollaboratorStatus() {
+  const response = await fetch(
+    `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/collaborators`,
+    {
+      headers: {
+        Authorization: `token ${accessToken}`,
+      },
+    }
+  );
+  if (!response.ok) {
+    throw new Error("Failed to check collaborator status");
   }
+  const collaborators = await response.json();
+  const user = await getAuthenticatedUser();
+  return collaborators.some(
+    (collaborator) => collaborator.login === user.login
+  );
 }
 
-export function isAuthenticated() {
-  return !!accessToken;
-}
-
-export function getAccessToken() {
-  return accessToken;
+async function getAuthenticatedUser() {
+  const response = await fetch("https://api.github.com/user", {
+    headers: {
+      Authorization: `token ${accessToken}`,
+    },
+  });
+  if (!response.ok) {
+    throw new Error("Failed to get user info");
+  }
+  return response.json();
 }
 
 export async function saveToGitHub(content, course) {
   if (!accessToken) {
-    throw new Error("No hay token de acceso. Se requiere autenticación.");
+    alert("Por favor, autentícate primero.");
+    return false;
   }
 
   const fileName = course === "taller" ? "taller.md" : "seminario.md";
   const path = `content/${fileName}`;
 
   try {
+    // Obtener el SHA del archivo existente
     const currentFile = await getFileContent(path);
     const sha = currentFile ? currentFile.sha : null;
 
+    // Crear o actualizar el archivo
     const response = await fetch(
       `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`,
       {
@@ -87,8 +91,8 @@ export async function saveToGitHub(content, course) {
         },
         body: JSON.stringify({
           message: `Update ${fileName}`,
-          content: btoa(content),
-          sha: sha,
+          content: btoa(content), // Codifica el contenido en base64
+          sha: sha, // Necesario para actualizar un archivo existente
         }),
       }
     );
@@ -97,11 +101,12 @@ export async function saveToGitHub(content, course) {
       throw new Error("Failed to save file");
     }
 
-    console.log("Contenido guardado exitosamente en GitHub.");
+    alert("Contenido guardado exitosamente en GitHub.");
     return true;
   } catch (error) {
     console.error("Error al guardar en GitHub:", error);
-    throw error;
+    alert("Error al guardar el contenido. Por favor, intenta de nuevo.");
+    return false;
   }
 }
 
@@ -124,6 +129,6 @@ async function getFileContent(path) {
     return response.json();
   } catch (error) {
     console.error("Error al obtener el contenido del archivo:", error);
-    throw error;
+    return null;
   }
 }
