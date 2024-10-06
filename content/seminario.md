@@ -1,6 +1,6 @@
 # Seminario de Investigación Académica II
 
-probando me hallo
+probando me hallo, prueba
 
 ## Estructura de la tesis
 
