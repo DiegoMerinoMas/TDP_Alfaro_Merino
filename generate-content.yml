@@ -1,0 +1,31 @@
+name: Generate Static Content
+
+on:
+  push:
+    branches:
+      - main # o el nombre de tu rama principal
+  workflow_dispatch: # Permite ejecutar el workflow manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate static content
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p public/content
+          for file in content/*.md; do
+            filename=$(basename "$file")
+            content=$(cat "$file")
+            echo "{ \"content\": \"$(echo "$content" | base64 | tr -d '\n')\" }" > "public/content/${filename%.md}.json"
+          done
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
