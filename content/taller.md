@@ -15,4 +15,4 @@
 
 ## Notas importantes
 
-Recuerda mantener un seguimiento constante de tus avances y actualizar esta lista regularmente. La participación activa en clase y en las actividades grupales es fundamental para el éxito en este curso.
+Que me dice me dice le digo me dice

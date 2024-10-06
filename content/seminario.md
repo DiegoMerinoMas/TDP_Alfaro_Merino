@@ -33,4 +33,4 @@
 
 ## Notas importantes
 
-Mantén un registro detallado de tus fuentes y asegúrate de seguir las normas de citación apropiadas. La coherencia entre tus objetivos, metodología y conclusiones es crucial para una tesis sólida.
+La cucaracha, la cucarcha, la larararala
