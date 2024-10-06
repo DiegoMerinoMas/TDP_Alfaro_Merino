@@ -1,6 +1,6 @@
 export async function loadContent(course) {
   const fileName = course === "taller" ? "taller.json" : "seminario.json";
-  const path = `content/${fileName}`;
+  const path = `${fileName}`; // Ahora los archivos JSON están en la raíz
 
   console.log(`Intentando cargar el archivo: ${path}`);
 

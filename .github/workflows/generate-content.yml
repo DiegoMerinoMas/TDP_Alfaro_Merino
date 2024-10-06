@@ -1,57 +1,60 @@
 name: Generate Static Content
-
 on:
   push:
     branches:
-      - main # o el nombre de tu rama principal
-  workflow_dispatch: # Permite ejecutar el workflow manualmente
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
-      
+          python-version: "3.x"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install unidecode
-      
+
       - name: Generate static content
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mkdir -p public/content
+          mkdir -p public
           python - <<EOF
           import os
           import json
           import base64
+          import shutil
           from unidecode import unidecode
+
+          # Copiar todos los archivos estáticos
+          shutil.copytree('js', 'public/js', dirs_exist_ok=True)
+          shutil.copytree('css', 'public/css', dirs_exist_ok=True)
+          shutil.copytree('views', 'public/views', dirs_exist_ok=True)
+          shutil.copy('index.html', 'public/index.html')
 
           for filename in os.listdir('content'):
               if filename.endswith('.md'):
                   with open(os.path.join('content', filename), 'r', encoding='utf-8') as file:
                       content = file.read()
                   
-                  # Convertir caracteres especiales a sus equivalentes ASCII
                   content_ascii = unidecode(content)
-                  
-                  # Codificar en base64
                   content_base64 = base64.b64encode(content_ascii.encode('utf-8')).decode('utf-8')
                   
                   json_content = json.dumps({'content': content_base64})
                   
                   output_filename = os.path.splitext(filename)[0] + '.json'
-                  with open(os.path.join('public/content', output_filename), 'w') as outfile:
+                  with open(os.path.join('public', output_filename), 'w') as outfile:
                       outfile.write(json_content)
           EOF
-      
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
