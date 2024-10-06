@@ -1,5 +1,5 @@
 const CLIENT_ID = "Ov23liiB7IPy9NBPuIjt";
-const REDIRECT_URI = "https://tu-github-pages-url.com";
+const REDIRECT_URI = "https://diegomerinomas.github.io/thesis_tracker_Alfaro_Merino/";
 const REPO_OWNER = "DiegoMerinoMas";
 const REPO_NAME = "thesis_tracker_Alfaro_Merino";
 
