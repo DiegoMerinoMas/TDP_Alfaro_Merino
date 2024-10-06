@@ -1,5 +1,6 @@
 const CLIENT_ID = "Ov23liiB7IPy9NBPuIjt";
-const REDIRECT_URI = "https://diegomerinomas.github.io/thesis_tracker_Alfaro_Merino/";
+const REDIRECT_URI =
+  "https://diegomerinomas.github.io/thesis_tracker_Alfaro_Merino/";
 const REPO_OWNER = "DiegoMerinoMas";
 const REPO_NAME = "thesis_tracker_Alfaro_Merino";
 
@@ -71,7 +72,7 @@ export async function saveToGitHub(content, course) {
   }
 
   const fileName = course === "taller" ? "taller.md" : "seminario.md";
-  const path = `content/${fileName}`;
+  const path = `../content/${fileName}`;
 
   try {
     const currentFile = await getFileContent(path);
