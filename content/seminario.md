@@ -1,5 +1,7 @@
 # Seminario de Investigación Académica II
 
+probando me hallo
+
 ## Estructura de la tesis
 
 1. Introducción
