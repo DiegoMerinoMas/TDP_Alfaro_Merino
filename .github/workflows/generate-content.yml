@@ -13,6 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
       - name: Generate static content
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -20,8 +25,8 @@ jobs:
           mkdir -p public/content
           for file in content/*.md; do
             filename=$(basename "$file")
-            content=$(cat "$file")
-            echo "{ \"content\": \"$(echo "$content" | base64 | tr -d '\n')\" }" > "public/content/${filename%.md}.json"
+            content=$(python -c "import sys, json, base64; print(json.dumps({'content': base64.b64encode(sys.stdin.read().encode('utf-8')).decode('utf-8')}))" < "$file")
+            echo "$content" > "public/content/${filename%.md}.json"
           done
 
       - name: Deploy to GitHub Pages
